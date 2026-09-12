@@ -89,28 +89,6 @@ input[type="reset"] {
   margin: 0;
 }
 
-/* Fila superior: logo junto al bienvenido (envolver ambos en .fila-bienvenida) */
-.fila-bienvenida {
-  max-width: var(--max-width);
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.fila-bienvenida .logo img {
-  max-width: 160px;
-  margin: 0;
-}
-
-.fila-bienvenida .bienvenida {
-  max-width: none;
-  margin: 0;
-  flex: 1;
-}
-
 /* Fila inferior del encabezado: filtros a la izquierda, menú a la derecha */
 .barra-filtros {
   max-width: var(--max-width);
