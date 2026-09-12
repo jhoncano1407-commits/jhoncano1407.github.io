@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recuperar contraseña</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+
+<div class="pagina-acceso">
+  <h1>Recuperar contraseña</h1>
+  <p>Ingresa el correo con el que creaste tu cuenta. Si existe, te llegará un enlace para restablecer la contraseña.</p>
+
+  <div class="tarjeta-acceso">
+    <span>SOFA_REPO · recuperación</span>
+
+    <!-- CONECTOR: aquí va el action/method o script que envía el correo de recuperación -->
+    <form action="" method="POST">
+      <div class="campo">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" name="correo" required>
+      </div>
+
+      <button type="submit" class="boton">Enviar enlace de recuperación</button>
+    </form>
+  </div>
+
+  <p class="enlace-secundario"><a href="iniciar-sesion.html">Volver a iniciar sesión</a></p>
+</div>
+
+</body>
+</html>

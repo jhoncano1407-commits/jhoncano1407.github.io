@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOFA_REPO</title>
+    <meta name="description" content="Plataforma para crear, almacenar y descargar repositorios de código de forma sencilla y organizada.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@400;600&family=Inter:wght@400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../estilo.css">
+</head>
+<body>
+<header class="encabezado">
+ <div class="fila-bienvenida">
+    <div class="logo">
+        <img src="/archivos/Logo.png" alt="SOFA REPO">
+    </div>
+
+    <div class="bienvenida">
+        <p>Bienvenido a SOFA REPO <br>
+        Gracias por visitar nuestra plataforma. Aquí podrás crear, almacenar y descargar repositorios de códigos de manera sencilla y organizada.</p>
+    </div>
+ </div>
+
+<div class="barra-filtros">
+
+  <div class="filtros">
+        <select id="filtro-fecha">
+            <option value="">Fecha</option>
+            <option value="semana">Última semana</option>
+            <option value="mes">Último mes</option>
+            <option value="anio">Este año</option>
+        </select>
+
+        <select id="filtro-tamano">
+            <option value="">Tamaño</option>
+            <option value="pequeno">Menor a 1MB</option>
+            <option value="medio">1MB - 10MB</option>
+            <option value="grande">Mayor a 10MB</option>
+        </select>
+
+        <select id="filtro-formato">
+            <option value="">Formato</option>
+            <option value="zip">.zip</option>
+            <option value="py">.py</option>
+            <option value="html">.html</option>
+            <option value="sql">.sql</option>
+        </select>
+
+        <input type="text" id="filtro-autor" placeholder="Autor">
+  </div>
+
+  <nav class="dropdown">
+    <button class="dropdown-btn">Menú ▾</button>
+    <div class="dropdown-content">
+        <a href="../index.html">Inicio</a>
+        <a href="repositorios.html">Repositorios</a>
+        <a href="s_repos.html">Subir repositorios</a>
+        <a href="descargas.html">Descargas</a>
+        <a href="Ayuda_comentarios.html">Ayuda y comentarios</a>
+        <a href="perfil.html">Perfil</a>
+        <a href="crear-cuenta.html">Crear Cuenta</a>
+    </div>
+  </nav>
+
+</div>
+
+</header>
+
+<main>
+
+  <h2 class="titulo-seccion">Descargas</h2>
+  <p class="introduccion">Aquí podrás visualizar los repositorios que has descargado recientemente. Elige la versión y el sistema operativo que necesitas.</p>
+
+  <div class="resultados-control">
+    <label for="cantidad-mostrar">Repositorios por página:</label>
+    <select id="cantidad-mostrar" aria-label="Cantidad de repositorios a mostrar">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+    </select>
+  </div>
+
+  <form class="busqueda-descarga">
+    <div class="campo">
+      <label for="version">Versión</label>
+      <input id="version" placeholder="Última versión" name="version">
+    </div>
+    <div class="campo">
+      <label for="sistema">Sistema operativo</label>
+      <input id="sistema" placeholder="iOS, Windows..." name="OS">
+    </div>
+  </form>
+
+  <div class="tarjeta-descarga">
+    <div class="info-archivo">
+      <span class="nombre-archivo">repohub-2.3.0-win-x64.exe</span>
+      <span class="tamano-archivo">48.2 MB</span>
+    </div>
+
+    <button class="boton" onclick="descargarArchivo()">Descargar</button>
+
+    <div class="detalle-checksum">
+      <span class="etiqueta-checksum">SHA-256:</span>
+      <code id="checksum">3f2a1c9e8b7d4f0a1e2c3b4a5d6e7f8c9b0a1d2e3f4c5b6a7d8e9f0a1b2c3d4e</code>
+      <button class="boton boton-fantasma" onclick="copiarChecksum()">Copiar</button>
+    </div>
+
+    <span class="contador-descargas">12,847 descargas totales</span>
+  </div>
+
+  <div class="novedades">
+    <h2 class="titulo-seccion">Novedades</h2>
+    <ul>
+        <li>Corrección de errores en la actualización de repositorios</li>
+        <li>Mejora del tiempo de carga del panel de imágenes</li>
+        <li>Nuevo soporte para archivos mayores a 100 MB</li>
+    </ul>
+  </div>
+
+  <div class="historial">
+    <h2 class="titulo-seccion">Historial de descargas</h2>
+     <table class="tabla-historial">
+      <thead>
+        <tr>
+          <th>Versión</th>
+          <th>Sistema operativo</th>
+          <th>Fecha</th>
+          <th>Tamaño</th>
+        </tr>
+      </thead>
+      <tbody id="cuerpo-historial">
+        <tr>
+          <td>2.3.0</td>
+          <td>Windows</td>
+          <td>28/08/2026</td>
+          <td>48.2 MB</td>
+        </tr>
+        <tr>
+          <td>2.2.1</td>
+          <td>macOS</td>
+          <td>14/07/2026</td>
+          <td>51.0 MB</td>
+        </tr>
+        <tr>
+          <td>2.1.0</td>
+          <td>Linux</td>
+          <td>02/06/2026</td>
+          <td>44.7 MB</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+ <footer>
+        <p>&copy; 2026 SOFA_REPO</p>
+    </footer>
+
+<script>
+  function descargarArchivo(){
+    const version = document.getElementById('version').value;
+    const so = document.getElementById('sistema').value;
+    alert('Iniciando descarga: versión ' + version + ' para ' + so);
+    // aquí iría la lógica real, por ejemplo redirigir a la URL del archivo
+  }
+
+  function copiarChecksum(){
+    const texto = document.getElementById('checksum').textContent;
+    navigator.clipboard.writeText(texto);
+    alert('Checksum copiado al portapapeles');
+  }
+</script>
+</body>
+</html>
